@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Courir</string>
+
+    <string name="action_filter">Filter</string>
+    <string name="action_delete">Delete</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_who_runs">WhoRunsActivity</string>
+
+    <string name="launch_activity">Launch activity</string>
+
+    <string name="location_unknown">Location unknown</string>
+    <string name="location_updates_label">Location Updates</string>
+    <string name="permission_rationale">Location permission is needed for core functionality</string>
+
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core
+        functionality.</string>
+    <string name="settings">Settings</string>
+    <string name="ok">OK</string>
+    <string name="request_location_updates">Start Run</string>
+    <string name="remove_location_updates">Stop Run</string>
+    <string name="location_updated">Location Updated: %1$s</string>
+
+    <string name="snack_bar_undo">Undo</string>
+
+    <string name="title_activity_show_run">Your Run</string>
+    <string name="google_maps_key">AIzaSyDXYGo5gOtBDjQdBTJVBJ8KQwpsa1il-9g</string>
+
+    <string-array name="gender_array">
+        <item>Female</item>
+        <item>Male</item>
+        <item>Diverse</item>
+    </string-array>
+
+
+</resources>

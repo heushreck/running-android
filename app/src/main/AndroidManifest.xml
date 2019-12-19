@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.enseirb_neudecknicolas_satomidavid">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ShowRunActivity"
+            android:label="@string/title_activity_show_run"></activity>
+        <activity android:name=".AddUserActivity"
+            android:label="Add a new User"/>
+        <activity android:name=".WhoRunsActivity"/>
+        <activity android:name=".RunsActivity"
+            android:label="All Runs"/>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" /> <!-- Foreground services in Q+ require type. -->
+        <service
+            android:name=".LocationUpdatesService"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="location" />
+    </application>
+
+
+</manifest>
