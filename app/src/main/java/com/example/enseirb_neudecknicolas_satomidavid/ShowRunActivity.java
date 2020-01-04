@@ -45,7 +45,7 @@ public class ShowRunActivity extends AppCompatActivity implements OnMapReadyCall
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        polylineOptions = new PolylineOptions().clickable(false).width(5).color(Color.RED).visible(true);
+        polylineOptions = new PolylineOptions().clickable(false).width(10).color(Color.RED).visible(true);
 
         JSONObject mJsonObject = null;
         if(getIntent().hasExtra("json")) {
