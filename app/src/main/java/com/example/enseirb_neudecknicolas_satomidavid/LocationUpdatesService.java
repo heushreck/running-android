@@ -130,6 +130,8 @@ public class LocationUpdatesService extends Service {
 
     private float distance_so_far = 0;
 
+    private boolean first_location = true;
+
     public LocationUpdatesService() {
     }
 
@@ -366,6 +368,12 @@ public class LocationUpdatesService extends Service {
     }
 
     private void onNewLocation(Location location) {
+        if(first_location){
+            first_location = false;
+            Log.i(TAG, "First location ignored");
+            return;
+        }
+
         Log.i(TAG, "New location: " + location);
 
         if(mLocation != null && location != null){
