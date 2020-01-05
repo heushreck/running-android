@@ -24,6 +24,15 @@
 
     <string name="title_activity_show_run">Your Run</string>
     <string name="google_maps_key">AIzaSyDXYGo5gOtBDjQdBTJVBJ8KQwpsa1il-9g</string>
+    <string name="enter_first_name">Enter Your First Name:</string>
+    <string name="enter_last_name">Enter Your Last Name:</string>
+    <string name="enter_gender">Enter Your Gender:</string>
+    <string name="add_user">Add user</string>
+    <string name="change_runner">Change Runner</string>
+    <string name="see_previous_runs">See previous runs</string>
+    <string name="track_run">Track your running!</string>
+    <string name="current_runner">Current Runner:</string>
+    <string name="informations">Informations</string>
 
     <string-array name="gender_array">
         <item>Female</item>

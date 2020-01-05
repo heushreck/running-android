@@ -14,7 +14,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_margin="10dp"
-        android:text="Enter Your First Name:"
+        android:text="@string/enter_first_name"
+        android:textColor="@color/colorPrimaryText"
         android:textSize="24sp"
         >
     </TextView>
@@ -42,7 +43,8 @@
         app:layout_constraintTop_toBottomOf="@id/add_user_firstName"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_margin="10dp"
-        android:text="Enter Your Last Name:"
+        android:text="@string/enter_last_name"
+        android:textColor="@color/colorPrimaryText"
         android:textSize="24sp"
         >
     </TextView>
@@ -70,9 +72,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/add_user_lastName"
         app:layout_constraintLeft_toLeftOf="parent"
-
+        android:textColor="@color/colorPrimaryText"
         android:layout_margin="10dp"
-        android:text="Enter Your Gender:"
+        android:text="@string/enter_gender"
         android:textSize="24sp"
         >
     </TextView>
@@ -95,11 +97,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/background_button"
-        android:text="Add user"
+        android:text="@string/add_user"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/add_user_spinner"
-        app:layout_constraintVertical_bias="0.111"></Button>
+        app:layout_constraintVertical_bias="0.111" />
 </androidx.constraintlayout.widget.ConstraintLayout>
