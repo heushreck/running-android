@@ -374,6 +374,12 @@ public class LocationUpdatesService extends Service {
             return;
         }
 
+
+        if(mLocation.distanceTo(location) > 15){
+            Log.i(TAG, "Location too far away");
+            return;
+        }
+
         Log.i(TAG, "New location: " + location);
 
         if(mLocation != null && location != null){
