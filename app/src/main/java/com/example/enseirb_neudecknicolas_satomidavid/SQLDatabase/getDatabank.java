@@ -37,7 +37,15 @@ public class getDatabank {
 
         List<User> users = db.getAllUsers();
 
-        String json = "{\"-35\":\"143\",\"-36\":\"143\", \"-37\":\"143\",\"-38\":\"143\"}";
+        String json = "{\"44.841691\":\"-0.56934\"," +
+                "\"44.841500\":\"-0.570501\", " +
+                "\"44.841376\":\"-0.571818\"," +
+                "\"44.841281\":\"-0.572389\"," +
+                "\"44.840986\":\"-0.572342\"," +
+                "\"44.840605\":\"-0.572291\"," +
+                "\"44.840596\":\"-0.572873\"," +
+                "\"44.840557\":\"-0.573448\"," +
+                "\"44.840487\":\"-0.574268\"}";
 
         JSONObject locationList;
         try {
@@ -47,7 +55,7 @@ public class getDatabank {
         }
 
         db.addRun(new Run(users.get(0), new Date(), 42000, 120*60 + 70, 21, 25, locationList));
-        db.addRun(new Run(users.get(1), new Date(), 5000, 28*60 + 4, 12, 17, locationList));
+        db.addRun(new Run(users.get(1), new Date(), 500, 28*60 + 4, 12, 17, locationList));
         Log.d("LocationList","how many 1: " + db.getRunsCount());
     }
 
