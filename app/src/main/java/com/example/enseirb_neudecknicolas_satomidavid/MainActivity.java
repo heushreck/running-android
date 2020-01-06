@@ -26,6 +26,7 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.AnimationDrawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -42,6 +43,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
@@ -157,6 +159,13 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         myReceiver = new MyReceiver();
         setContentView(R.layout.activity_main);
+
+
+        ConstraintLayout constraintLayout = findViewById(R.id.activity_main);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(4000);
+        animationDrawable.start();
 
         getDatabank gH = new getDatabank(this);
         db = gH.getDb();
