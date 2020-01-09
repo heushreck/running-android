@@ -375,7 +375,12 @@ public class LocationUpdatesService extends Service {
         }
 
 
-        if(mLocation.distanceTo(location) > 15){
+        int timediff = (int) (location.getTime() - mLocation.getTime()) / 10; // in ms
+        int distance = (int) (mLocation.distanceTo(location) * 100); // in cm
+        Log.i(TAG, "Distance/Timediff: " + distance / timediff);
+
+        //Human Record is 12,42 m/s
+        if(distance / timediff > 13){
             Log.i(TAG, "Location too far away");
             return;
         }
