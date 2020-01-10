@@ -60,7 +60,7 @@ public class RunsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_filter){
             Snackbar snackbar = Snackbar
-                    .make(findViewById(android.R.id.content), "test", Snackbar.LENGTH_LONG);
+                    .make(findViewById(android.R.id.content), "Filter comming in future", Snackbar.LENGTH_LONG);
             snackbar.show();
         }
         if (item.getItemId() == R.id.action_delete){

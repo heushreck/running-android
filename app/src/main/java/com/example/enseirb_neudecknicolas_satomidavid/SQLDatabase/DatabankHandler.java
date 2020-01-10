@@ -299,7 +299,8 @@ public class DatabankHandler extends SQLiteOpenHelper {
                 }
                 CurrentRun currentRun = new CurrentRun(
                         date,
-                        location
+                        location,
+                        cursor.getFloat(3)
                 );
                 // Adding contact to list
                 list.add(currentRun);

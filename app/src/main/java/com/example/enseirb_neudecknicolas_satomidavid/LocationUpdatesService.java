@@ -284,8 +284,8 @@ public class LocationUpdatesService extends Service {
                 if(i > 0){
                     distance += tmp.distanceTo(currentRuns.get(i - 1).getLocation());
                 }
-                if(tmp.getSpeed() > topSpeed) topSpeed = tmp.getSpeed();
-                averageSpeed += tmp.getSpeed();
+                if(currentRuns.get(i).getSpeed() > topSpeed) topSpeed = currentRuns.get(i).getSpeed();
+                averageSpeed += currentRuns.get(i).getSpeed();
                 averageSpeedCounter++;
             }
             json += "}";
@@ -375,12 +375,13 @@ public class LocationUpdatesService extends Service {
         }
 
 
-        int timediff = (int) (location.getTime() - mLocation.getTime()) / 10; // in ms
-        int distance = (int) (mLocation.distanceTo(location) * 100); // in cm
-        Log.i(TAG, "Distance/Timediff: " + distance / timediff);
+        int timediff_in_seconds = (int) (location.getTime() - mLocation.getTime()) / 1000; // in s
+        int distance_in_meters = (int) mLocation.distanceTo(location);//in m
+        float speed_in_m_pro_s = distance_in_meters / timediff_in_seconds;
+        float speed_in_km_pro_h = speed_in_m_pro_s * 3.6f;
 
         //Human Record is 12,42 m/s
-        if(distance / timediff > 13){
+        if(speed_in_m_pro_s > 13){
             Log.i(TAG, "Location too far away");
             return;
         }
@@ -394,7 +395,7 @@ public class LocationUpdatesService extends Service {
         mLocation = location;
 
         if(location != null){
-            db.addCurrentRun(new CurrentRun(new Date(), location));
+            db.addCurrentRun(new CurrentRun(new Date(), location, speed_in_km_pro_h));
         }
 
         // Notify anyone listening for broadcasts about the new location.
